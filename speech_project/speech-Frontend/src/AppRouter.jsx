@@ -5,7 +5,7 @@ import Signup from "./Signup";
 import SpeechToText from "./SpeechToText";
 import TextToSpeech from "./TextToSpeech";
 import TranscriptionList from "./TranscriptionList";
-import "./AppRouter.css"; 
+import "./AppRouter.css";   
 
 function AppRouter() {
   const navigate = useNavigate();
