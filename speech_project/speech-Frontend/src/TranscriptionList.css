@@ -1,0 +1,88 @@
+/* Container for Transcription List */
+.transcription-list-container {
+  background-color: #121212; /* Dark background for contrast */
+  color: #f5f5f5; /* Light text */
+  font-family: "Arial", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+  min-width: 90vw;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+/* Heading */
+h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #FFA500; /* Orange color for the title */
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(255, 165, 0, 0.5); /* Subtle neon glow */
+}
+
+/* Back Button */
+.back-btn {
+  background: linear-gradient(45deg, #FF7F50, #FF6347); /* Coral to Tomato */
+  color: white;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 165, 0, 0.3); /* Soft orange glow */
+  margin-bottom: 30px;
+}
+
+.back-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.6); /* Brighter glow on hover */
+}
+
+/* Transcription List */
+.transcription-list {
+  width: 100%;
+  max-width: 800px;
+  background: rgba(30, 30, 30, 0.85); /* Slightly transparent dark background */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3); /* Light cyan glow */
+}
+
+/* List Items */
+.transcription-item {
+  background-color: #1e1e1e; /* Darker item background */
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.3); /* Light orange shadow */
+  transition: all 0.3s ease-in-out;
+}
+
+.transcription-item:hover {
+  transform: scale(1.02); /* Slightly enlarging on hover */
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.6); /* Brighter glow on hover */
+}
+
+/* Text Style */
+.transcription-item strong {
+  font-size: 1.1rem;
+  color: #ffcc00; /* Golden text for the transcription */
+}
+
+.transcription-item small {
+  font-size: 0.9rem;
+  color: #aaa; /* Subtle grey for the timestamp */
+  display: block;
+  margin-top: 10px;
+}
+
+/* Empty State */
+.transcription-list p {
+  font-size: 1.2rem;
+  color: #ff6347; /* Tomato color for no items state */
+  text-align: center;
+}
