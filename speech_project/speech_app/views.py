@@ -50,17 +50,30 @@ def speech_to_text(request):
 
     with mic as source:
         recognizer.adjust_for_ambient_noise(source)
-        print("Listening...")
-        audio = recognizer.listen(source)
+        print("Listening for up to 20 seconds...")
 
-    try:
-        text = recognizer.recognize_google(audio)  # OS-based speech recognition
-        transcription = SpeechText.objects.create(text=text)  # Store in DB
-        return JsonResponse({"transcription": text, "id": transcription.id, "message": "Saved successfully!"})
-    except sr.UnknownValueError:
-        return JsonResponse({"error": "Could not understand audio"})
-    except sr.RequestError:
-        return JsonResponse({"error": "Recognition service unavailable"})
+        try:
+            # Listen with a 20-second time limit
+            audio = recognizer.listen(source, timeout=9, phrase_time_limit=20)
+
+            # Perform speech recognition
+            text = recognizer.recognize_google(audio)
+            transcription = SpeechText.objects.create(text=text)  # Store in DB
+
+            return JsonResponse({
+                "transcription": text,
+                "id": transcription.id,
+                "message": "Saved successfully!"
+            })
+
+        except sr.WaitTimeoutError:
+            return JsonResponse({"error": "No speech detected within the timeout period."})
+
+        except sr.UnknownValueError:
+            return JsonResponse({"error": "Could not understand audio"})
+
+        except sr.RequestError:
+            return JsonResponse({"error": "Recognition service unavailable"})
 
 
 def get_transcriptions(request):
