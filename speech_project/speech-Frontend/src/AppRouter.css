@@ -1,204 +1,244 @@
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+.box {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+}
+span{
+  font-size: x-large;
+}
 /* Navbar Styling */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 77px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #282c34;
-    padding: 15px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 100; /* Ensures navbar stays above all content */
-  }
-  
-  .navbar h2 {
-    color: white;
-    font-size: 10px;
-  }
-  
-  .navbar .nav-container {
-    display: flex;
-    justify-content: space-between; /* Aligns items to the left and right */
-    width: 100%; /* Ensures the container spans the full width */
-    padding: 0 20px; /* Adds padding to the container */
-  }
-  
-  .nav-button {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    height: 50px;
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
-    margin-top: 24px;
-    margin-right: 70px;
-  }
-  
-  .nav-button:hover {
-    background-color: #ff3333;
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-  }
-  
-  /* Add padding to body to prevent content from hiding under the navbar */
-  body {
-    padding-top: 70px; /* Adjust based on navbar height */
-  }
-  
-  /* Other styling remains unchanged */
-  
-  
-  /* Other styling remains unchanged */
-  
-  /* Main Application Container */
-  .app-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* Stack content vertically */
-    height: 120%;
-    width: 100%;
-    height: 100%;
-    padding: 50px;
-    background-color: #535151; /* Light gray background */
-  }
-  
-  /* Content container for TTS and STT */
-  .content-container {
-    display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #232526, #414345);
+  padding: 0 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar:hover {
+  background: linear-gradient(135deg, #2c2e30, #515355);
+}
+
+.navbar h2 {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Logout Button */
+.nav-button {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
+}
+
+.nav-button:hover {
+  background: #ff2d2d;
+  transform: scale(1.07);
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.7);
+}
+
+/* Add padding to body */
+body {
+  padding-top: 85px;
+  background: #1e1e1e;
+  color: white;
+}
+
+/* Main Container */
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 40px 20px;
+}
+
+/* Content container */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px;
+}
+
+/* Heading */
+h1 {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* STT & TTS Container */
+.stt-tts-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+/* Individual Containers */
+.stt-container,
+.tts-container {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 12px;
+  padding: 25px;
+  width: 48%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(10px);
+}
+
+.stt-container:hover,
+.tts-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.7);
+}
+
+/* Buttons */
+.switch-btn,
+.list-btn {
+  background: linear-gradient(135deg, #4caf50, #81c784);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 5px 10px rgba(76, 175, 80, 0.4);
+  margin: 10px;
+}
+
+.switch-btn:hover,
+.list-btn:hover {
+  background: linear-gradient(135deg, #388e3c, #66bb6a);
+  transform: scale(1.05);
+}
+
+
+
+/* Language Select */
+.language-select {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.language-select:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Dropdown Options */
+.language-select option {
+  background: #222;
+  color: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .stt-tts-container {
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    padding: 20px;
   }
-  
-  /* Style for the main heading */
-  h1 {
-    color: white;
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  
-  /* Containers for TTS and STT */
-  .stt-tts-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    gap: 20px;
-    margin-bottom: 30px;
-  }
-  
-  /* Speech-to-Text (STT) container styles */
-  .stt-container {
-    background-color: #333; /* Dark gray background for STT */
-    color: white;
-    border-radius: 15px;
-    padding: 30px;
-    width: 45%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
-  }
-  
-  .stt-container:hover {
-    box-shadow: 0 0 30px rgba(255, 215, 0, 0.7); /* Soft golden glow on hover */
-  }
-  
-  /* Text-to-Speech (TTS) container styles */
+
+  .stt-container,
   .tts-container {
-    background-color: #222; /* Darker gray/black background for TTS */
-    color: white;
-    border-radius: 15px;
-    padding: 30px;
-    width: 45%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
-  }
-  
-  .tts-container:hover {
-    box-shadow: 0 0 30px rgba(255, 215, 0, 0.7); /* Soft golden glow on hover */
-  }
-  
-  /* Button Styles */
-  .switch-btn, .list-btn{
-    background-color: #4caf50; /* Green background */
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 15px;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 14px;
-    width: 40%;
-  }
-  
-  .start-recording-btn,.convert-btn {
-    background-color: #e0521a; /* Green background */
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
-  }
-  
-  /* Focus effect for buttons */
-  .switch-btn:focus, .list-btn:focus, .start-recording-btn:focus, .convert-btn:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(72, 255, 72, 0.8); /* Green shadow when focused */
-  }
-  
-  /* Styling for the language selection dropdown */
-  .language-select {
     width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: none;
-    margin-top: 20px;
-    text-align: center;
-    background-color: #444; /* Dark background for dropdown */
-    color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
   }
-  
-  /* Hover effect for select */
-  .language-select:hover {
-    background-color: #555;
+
+  .switch-btn,
+  .list-btn {
+    width: 100%;
   }
-  
-  /* Focus effect for better accessibility */
-  .language-select:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(255, 215, 0, 0.8);
-  }
-  
-  /* Styling for dropdown options */
-  .language-select option {
-    background-color: #222; /* Dark background for options */
-    color: white;
-    padding: 10px;
-  }
-  
-  /* Change color on hover for options */
-  .language-select option:hover {
-    background-color: #333;
-  }
-  
+}
+/* Default Button Style */
+.start-recording-btn,
+.convert-btn {
+  background: linear-gradient(135deg, #e0521a, #ff7043); /* Warm orange gradient */
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 4px 10px rgba(224, 82, 26, 0.5);
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Effect */
+.start-recording-btn:hover,
+.convert-btn:hover {
+  background: linear-gradient(135deg, #d4af37, #9c7e31); /* Golden gradient */
+  transform: scale(1.07);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+}
+
+/* Button Glow Animation */
+.start-recording-btn::before,
+.convert-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 50%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease-out;
+}
+
+/* When Button is Clicked */
+.start-recording-btn:active::before,
+.convert-btn:active::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+}
