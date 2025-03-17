@@ -82,13 +82,12 @@ def get_transcriptions(request):
         {
             "id": t.id,
             "text": t.text,
-            "created_at": t.created_at.strftime("%Y-%m-%d %H:%M:%S")
+            "created_at": t.created_at.strftime("%Y-%m-%d %H:%M:%S") if t.created_at else "Unknown"
         }
         for t in transcriptions
     ]
 
     return JsonResponse({"transcriptions": transcription_list})
-
 
 class DeleteTranscriptionView(View):
     def delete(self, request, transcription_id):

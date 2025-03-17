@@ -49,12 +49,12 @@ function AppRouter() {
                 <div className="stt-tts-container">
                   <div className="stt-container">
                     <SpeechToText />
-                    <button className="switch-btn" onClick={() => setCurrentView("tts")}>Switch to Text-to-Speech</button>
+                    {/* <button className="switch-btn" onClick={() => setCurrentView("tts")}>Switch to Text-to-Speech</button> */}
                     <button className="list-btn" onClick={() => setCurrentView("list")}>Show Transcription List</button>
                   </div>
                   <div className="tts-container">
                     <TextToSpeech />
-                    <button className="switch-btn" onClick={() => setCurrentView("stt")}>Switch to Speech-to-Text</button>
+                    {/* <button className="switch-btn" onClick={() => setCurrentView("stt")}>Switch to Speech-to-Text</button> */}
                     <button className="list-btn" onClick={() => setCurrentView("list")}>Show Transcription List</button>
                   </div>
                 </div>

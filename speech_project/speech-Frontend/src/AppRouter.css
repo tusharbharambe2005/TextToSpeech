@@ -8,6 +8,7 @@
 .box {
   font-family: 'Courier New', Courier, monospace;
   font-size: 30px;
+  
 }
 span{
   font-size: x-large;
@@ -21,16 +22,15 @@ span{
   height: 75px;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #232526, #414345);
+  /* background: linear-gradient(135deg, #232526, #414345); */
+  background-color: #0d1117; 
+
   padding: 0 20px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
   z-index: 100;
   transition: all 0.3s ease-in-out;
 }
 
-.navbar:hover {
-  background: linear-gradient(135deg, #2c2e30, #515355);
-}
 
 .navbar h2 {
   color: white;
@@ -67,7 +67,8 @@ span{
 /* Add padding to body */
 body {
   padding-top: 85px;
-  background: #1e1e1e;
+  /* background: #1e1e1e; */
+  background-color: #0d1117; 
   color: white;
 }
 
@@ -112,7 +113,7 @@ h1 {
 /* Individual Containers */
 .stt-container,
 .tts-container {
-  background: rgba(255, 255, 255, 0.1);
+  background-color: #0d1117; /* GitHub Dark Mode feel */
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
   border-radius: 12px;
